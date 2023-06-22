@@ -5,7 +5,7 @@ LOGIN PAGE
 @endsection
 @section('content')
 <h1>LOGIN</h1>
-<h2>PLUS 20 SA ACTIVITY</h2>
+<h2>PLUS 20 SA ACTIVITY AND COLLOQIUM</h2>
 <form action="{{route('login.submit')}}" method="post">
     @csrf
     <div>
