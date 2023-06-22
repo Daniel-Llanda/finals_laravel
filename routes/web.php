@@ -22,9 +22,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [homeController::class, 'index'])->name('home');
-Route::get('/profile', [profileController::class, 'index'])->name('profile');
-Route::get('/event', [eventController::class, 'index'])->name('event');
+Route::get('/profile', [profileController::class, 'index'])->middleware('auth')->name('profile');
+Route::get('/event', [eventController::class, 'index'])->middleware('auth')->name('event');
 
 Route::get('/login', [authController::class, 'login'])->name('login');
+Route::post('/login', [authController::class, 'loginsubmit'])->name('login.submit');
+
+Route::get('/logout', [authController::class, 'logout'])->middleware('auth')->name('logout');
 
 Route::get('/register', [authController::class, 'register'])->name('register');
+Route::post('/register', [authController::class, 'registersubmit'])->name('register.submit');

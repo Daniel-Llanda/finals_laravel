@@ -5,7 +5,7 @@ LOGIN PAGE
 @endsection
 @section('content')
 <h1>LOGIN</h1>
-<form action="" method="post">
+<form action="{{route('login.submit')}}" method="post">
     @csrf
     <div>
         <label for="username">USERNAME</label>
@@ -13,7 +13,7 @@ LOGIN PAGE
     </div>
     <div>
         <label for="password">PASSWORD</label>
-        <input type="text" name="password">
+        <input type="password" name="password">
     </div>
     <div>
         <button>SUBMIT</button>

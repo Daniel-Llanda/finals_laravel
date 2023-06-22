@@ -5,11 +5,11 @@ REGISTER PAGE
 @endsection
 @section('content')
 <h1>REGISTER</h1>
-<form action="" method="post">
+<form action="{{route('register.submit')}}" method="post">
     @csrf
     <div>
-        <label for="username">USERNAME</label>
-        <input type="text" name="username">
+        <label for="name">NAME</label>
+        <input type="text" name="name">
     </div>
     <div>
         <label for="username">USERNAME</label>
@@ -17,7 +17,7 @@ REGISTER PAGE
     </div>
     <div>
         <label for="password">PASSWORD</label>
-        <input type="text" name="password">
+        <input type="password" name="password">
     </div>
     <div>
         <button>SUBMIT</button>

@@ -11,8 +11,13 @@
             <a href="{{route('home')}}">HOME</a>
             <a href="{{route('profile')}}">PROFILE</a>
             <a href="{{route('event')}}">EVENT</a>
-            <a href="{{route('login')}}">LOG IN</a>
-            <a href="{{route('register')}}">REGISTRATION</a>
+            @if(auth()->check())
+                <a href="{{route('logout')}}">LOG OUT</a>
+            @else
+                <a href="{{route('login')}}">LOG IN</a>
+                <a href="{{route('register')}}">REGISTRATION</a>
+            @endif
+            
         </nav>
     </header>
 
